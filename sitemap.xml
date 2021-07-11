@@ -2,102 +2,20 @@
 ---
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <organized-navigation-pages>
-    <home>
         {% for post in site.posts %}
-        {% if post.active == 'home' %}
         <url>
             <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
         </url>
-        {% endif %}
         {% endfor %}
 
 
         {% for page in site.pages %}
         {% if page.layout != nil %}
         {% if page.layout != 'feed' %}
-        {% if page.active == 'home' %}
         <url>
             <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
         </url>
         {% endif %}
         {% endif %}
-        {% endif %}
         {% endfor %}
-    </home>
-
-
-
-
-
-        <new>
-        {% for post in site.posts %}
-        {% if post.active == 'new-navbar' %}
-        <url>
-            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endfor %}
-
-
-        {% for page in site.pages %}
-        {% if page.layout != nil %}
-        {% if page.layout != 'feed' %}
-        {% if page.active == 'new-navbar' %}
-        <url>
-            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-        </new>
-
-
-        <all>
-        {% for post in site.posts %}
-        {% if post.active == 'all-navbar' %}
-        <url>
-            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endfor %}
-
-
-
-        {% for page in site.pages %}
-        {% if page.layout != nil %}
-        {% if page.layout != 'feed' %}
-        {% if page.active == 'all-navbar' %}
-        <url>
-            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-        </all>
-  </organized-navigation-pages>
-  <interviews>
-        {% for post in site.posts %}
-        {% if post.active == 'interview' %}
-        <url>
-            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endfor %}
-
-
-        {% for page in site.pages %}
-        {% if page.layout != nil %}
-        {% if page.layout != 'feed' %}
-        {% if page.active == 'interview' %}
-        <url>
-            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endfor %}
-  </interviews>
 </urlset>
