@@ -3,154 +3,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <organized-navigation-pages>
-    {% for post in site.posts %}
-    {% if post.inside-more == 'organized-navigation' %}
-    {% if post.active == 'more' %}
-    <url>
-        <loc>http://saving.love{{ post.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
-    {% endfor %}
+    <home>
+        {% for post in site.posts %}
+        {% if post.active == 'home' %}
+        <url>
+            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endfor %}
 
-    {% for page in site.pages %}
 
-    {% if page.inside-more == 'organized-navigation' %}
-    {% if page.active == 'more' %}
+        {% for page in site.pages %}
+        {% if page.layout != nil %}
+        {% if page.layout != 'feed' %}
+        {% if page.active == 'home' %}
+        <url>
+            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </home>
 
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
-    <url>
-        <loc>http://saving.love{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
 
-    {% endif %}
-    {% endif %}
 
-    {% endif %}
-    {% endfor %}
+
+
+        <new>
+        {% for post in site.posts %}
+        {% if post.active == 'new-navbar' %}
+        <url>
+            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endfor %}
+
+
+        {% for page in site.pages %}
+        {% if page.layout != nil %}
+        {% if page.layout != 'feed' %}
+        {% if page.active == 'new-navbar' %}
+        <url>
+            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </new>
+
+
+        <all>
+        {% for post in site.posts %}
+        {% if post.active == 'all-navbar' %}
+        <url>
+            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endfor %}
+
+
+
+        {% for page in site.pages %}
+        {% if page.layout != nil %}
+        {% if page.layout != 'feed' %}
+        {% if page.active == 'all-navbar' %}
+        <url>
+            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
+        </url>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        </all>
   </organized-navigation-pages>
-  <sharing-the-gospel>
-    {% for post in site.posts %}
-    {% if post.active == 'share' %}
-    <url>
-        <loc>http://saving.love{{ post.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endfor %}
-
-    {% for page in site.pages %}
-    {% if page.active == 'share' %}
-
-    {% if page.layout != nil %}
-    {% if page.layout != 'feed' %}
-    <url>
-        <loc>http://saving.love{{ page.url | remove: 'index.html' }}</loc>
-    </url>
-    {% endif %}
-    {% endif %}
-
-    {% endif %}
-    {% endfor %}
-  </sharing-the-gospel>
-  <more-about-the-saving-love-of-God>
-    <who-God-is>
+  <interviews>
         {% for post in site.posts %}
-        
-        {% unless post.inside-more == 'organized-navigation' %}
-        {% if post.active == 'more' %}
-
-        {% if post.inside-more == 'who-God-is' %}
+        {% if post.active == 'interview' %}
         <url>
-            <loc>http://saving.love{{ post.url | remove: 'index.html' }}</loc>
+            <loc>http://interview.love{{ post.url | remove: 'index.html' }}</loc>
         </url>
         {% endif %}
-
-        {% endif %}
-        {% endunless %}
-
         {% endfor %}
+
 
         {% for page in site.pages %}
-        {% unless page.inside-more == 'organized-navigation' %}
-        {% if page.active == 'more' %}
-        {% if page.inside-more == 'who-God-is' %}
-
         {% if page.layout != nil %}
         {% if page.layout != 'feed' %}
+        {% if page.active == 'interview' %}
         <url>
-            <loc>http://saving.love{{ page.url | remove: 'index.html' }}</loc>
+            <loc>http://interview.love{{ page.url | remove: 'index.html' }}</loc>
         </url>
         {% endif %}
         {% endif %}
         {% endif %}
-        {% endif %}
-        
-        {% endunless %}
         {% endfor %}
-    </who-God-is>
-    <information-about-the-gospel>
-        {% for post in site.posts %}
-        {% unless post.inside-more == 'organized-navigation' %}
-        {% if post.active == 'more' %}
-        {% if post.inside-more == 'information-about-the-gospel' %}
-        <url>
-            <loc>http://saving.love{{ post.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endunless %}
-        {% endfor %}
-
-        {% for page in site.pages %}
-        {% unless page.inside-more == 'organized-navigation' %}
-        {% if page.active == 'more' %}
-        {% if page.inside-more == 'information-about-the-gospel' %}
-        {% if page.layout != nil %}
-        {% if page.layout != 'feed' %}
-        <url>
-            <loc>http://saving.love{{ page.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endunless %}
-        {% endfor %}
-    </information-about-the-gospel>
-    <other-pages-about-the-saving-love-of-God>
-        {% for post in site.posts %}
-        {% unless post.inside-more == 'organized-navigation' %}
-        {% unless post.inside-more == 'who-God-is' %}
-        {% unless post.inside-more == 'information-about-the-gospel' %}
-        {% if post.active == 'more' %}
-        <url>
-            <loc>http://saving.love{{ post.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endunless %}
-        {% endunless %}
-        {% endunless %}
-        {% endfor %}
-
-        {% for page in site.pages %}
-        {% unless page.inside-more == 'organized-navigation' %}
-        {% unless page.inside-more == 'who-God-is' %}
-        {% unless page.inside-more == 'information-about-the-gospel' %}
-        {% if page.active == 'more' %}
-        {% if page.layout != nil %}
-        {% if page.layout != 'feed' %}
-        <url>
-            <loc>http://saving.love{{ page.url | remove: 'index.html' }}</loc>
-        </url>
-        {% endif %}
-        {% endif %}
-        {% endif %}
-        {% endunless %}
-        {% endunless %}
-        {% endunless %}
-        {% endfor %}
-    </other-pages-about-the-saving-love-of-God>
-  </more-about-the-saving-love-of-God>
+  </interviews>
 </urlset>
