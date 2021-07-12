@@ -2952,8 +2952,32 @@ a:hover::before{
 }
 
 
-
-
+.imgLink {
+  -webkit-transition: none;
+	transition: none;
+}
+a.imgLink::before {
+	position: relative;
+	top: auto;
+	left: auto;
+	box-sizing: content-box;
+	padding: 0 0;
+	width: auto;
+	height: auto;
+	border: none;
+  border-radius: 0;
+	content: '';
+	opacity: 0;
+	-webkit-transition: none;
+	transition: none;
+	-webkit-transform: none;
+	transform: none;
+}
+a.imgLink:hover::before{
+	opacity: 1;
+	-webkit-transform: none;
+	transform: none;
+}
 
 
 a.button, a.brand, a.firstHeaderLinkPrint, a.secondHeaderLinkHome, a.thirdHeaderLinkMore {
@@ -2994,6 +3018,7 @@ a.button:hover::before, a.brand:hover::before, a.firstHeaderLinkPrint:hover::bef
 	-webkit-transform: none;
 	transform: none;
 }
+
 
 
   .actualContentCell {
