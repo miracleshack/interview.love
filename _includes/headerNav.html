@@ -10,10 +10,10 @@
     </ul>
     <ul  class="secondHeaderListB">
     <li class="listItemsB1">
-        <a href="{{ base }}/all/" class="{% if page.active == 'interview' %}current{% endif %} secondHeaderLinkHome">All&nbsp;Interviews</a>
+        <a href="{{ base }}/all/" class="{% if page.active == 'interview' %}current{% endif %}{% if page.active == 'all-navbar' %}current{% endif %} secondHeaderLinkHome">All&nbsp;Interviews</a>
     </li>
     <li class="listItemsB2">
-        <a href="{{ base }}/new/" class="{% if page.active == 'new' %}current{% endif %} thirdHeaderLinkMore">New&nbsp;Interviews</a>
+        <a href="{{ base }}/new/" class="{% if page.active == 'new' %}current{% endif %}{% if page.active == 'new-navbar' %}current{% endif %} thirdHeaderLinkMore">New&nbsp;Interviews</a>
     </li>
     </ul>
     </li>
